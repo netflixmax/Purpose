@@ -1,0 +1,21 @@
+{
+  "name": "问志 · 问 AI 前的化简",
+  "short_name": "问志",
+  "description": "问 AI 前 30 秒：把『我想知道关于 X 的一切』化简成『我此刻最想搞清楚的那一个具体问题』。",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0e0e0c",
+  "theme_color": "#0e0e0c",
+  "lang": "zh-CN",
+  "categories": ["productivity", "education"],
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

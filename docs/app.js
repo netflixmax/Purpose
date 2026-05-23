@@ -132,6 +132,7 @@ function renderHome() {
 
     <hr class="rule">
     <div class="btn-group">
+      <a class="btn ghost small" href="ask/">→ 去问志（问 AI 前的化简）</a>
       <button class="btn ghost small" data-action="export">导出全部数据</button>
     </div>
   `;

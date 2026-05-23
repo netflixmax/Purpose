@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#0e0e0c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="问志">
+  <title>问志 · 问 AI 前的化简</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* 问志专属：青色品牌色（与读志的朱砂区分）*/
+    :root {
+      --ask-accent: #6ab0a3;   /* 远山青 — 问志的印 */
+      --ask-glow:   #8fd1c2;
+    }
+    .brand .seal.ask {
+      background: var(--ask-accent);
+      color: var(--paper);
+    }
+    .empty .seal-mark.ask {
+      background: var(--ask-accent);
+    }
+    .settled-banner.ask {
+      border-color: var(--ask-accent);
+      background: linear-gradient(180deg, var(--paper-raised) 0%, #16201d 100%);
+    }
+    .settled-banner.ask .stamp { color: var(--ask-accent); }
+    .settled-banner.ask .reading-intent { color: var(--ask-glow); }
+    .btn.ask-primary {
+      background: var(--ask-accent);
+      color: var(--paper);
+      border-color: var(--ask-accent);
+      font-weight: 600;
+    }
+    .btn.ask-primary:active { background: #527f76; }
+
+    /* 复制反馈 toast */
+    .toast {
+      position: fixed;
+      left: 50%; bottom: calc(var(--safe-bottom) + 2rem);
+      transform: translateX(-50%);
+      background: var(--ask-accent);
+      color: var(--paper);
+      padding: 0.7rem 1.2rem;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(-4px);
+    }
+
+    /* 反馈条 */
+    .feedback-row {
+      display: flex;
+      gap: 0.5rem;
+      margin: 0.6rem 0;
+    }
+    .feedback-row .btn { flex: 1; padding: 0.7rem; }
+    .feedback-row .btn.rate-gold { color: var(--gold); border-color: var(--gold); }
+    .feedback-row .btn.rate-usable { color: var(--ask-accent); border-color: var(--ask-accent); }
+    .feedback-row .btn.rate-miss { color: var(--ink-dim); }
+    .feedback-row .btn.selected.rate-gold { background: var(--gold); color: var(--paper); }
+    .feedback-row .btn.selected.rate-usable { background: var(--ask-accent); color: var(--paper); }
+    .feedback-row .btn.selected.rate-miss { background: var(--ink-dim); color: var(--paper); }
+  </style>
+</head>
+<body>
+  <main id="app"></main>
+  <div id="toast" class="toast"></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
